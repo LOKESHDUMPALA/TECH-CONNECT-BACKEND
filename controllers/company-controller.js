@@ -9,7 +9,7 @@ exports.applyToCompany = async (req, res) => {
         if (!company) return res.status(404).json({ message: "Company not found" });
 
         if (company.appliedEmails.includes(Semail)) {
-            return res.status(400).json({ message: "Already applied" });
+            return res.status(200).json({ message: "Already applied" });
         }
 
         company.appliedEmails.push(Semail);
